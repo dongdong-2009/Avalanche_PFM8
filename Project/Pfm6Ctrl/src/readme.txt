@@ -550,25 +550,25 @@ v 2.12 Feb 24 2016, <EFF7B41B>
 17.10.2016, neodvisna kanala, ne dela .... !
 19.10.2016, neodvisna kanala, problem z locenima intervaloma meritve, se ne dela !!!
 21.10.2016, timer 1,8 interrupt koncno dela
-			spremenjen koncept za _TEST_ mode
+		spremenjen koncept za _TEST_ mode
 
 26.10.2016	PULSE_FINISHED se prestavi iz TIM Isr na konec ADC DMA interrupt, da se zakjuci odziv na ADC preden se gre racunat energija. 
-			za  nazaj naj bi blo OK, ker je bil dozdaj itak samo en interval za vse kanale ???
+		za  nazaj naj bi blo OK, ker je bil dozdaj itak samo en interval za vse kanale ???
 
-9.11.2016 smafu v razporeditvi SetPwmTab ...
+9.11.2016 	smafu v razporeditvi SetPwmTab ...
 
-23.11.2016 bug v TriggerADC... argument p je lahko NULL in ga ne smes uporabljat v proceduri kot pointer na pfm objekt :):):)
-			>v 2.13 Nov 23 2016, <31584BBF>
+23.11.2016 	bug v TriggerADC... argument p je lahko NULL in ga ne smes uporabljat v proceduri kot pointer na pfm objekt :):):)
+		>v 2.13 Nov 23 2016, <31584BBF>
 		
 25.11.2016 Spremenjen trigger in timers.c, handler, Eack in TriggerADC uporabljajo skupno strukturo, eint se doloca glede na obratovalni rezim
 
 9.12.2016	ITM debug prenesen v App_Init. metodi getITM in putITM nadomestita orig. __get() in __put()
-			*** kanala za flash U in I sta spremenjena za test __DISC7__
-			*** TRGO za TIM8 koda je razlicna za stm32f4xx in stm32f7xxx
+		*** kanala za flash U in I sta spremenjena za test __DISC7__
+		*** TRGO za TIM8 koda je razlicna za stm32f4xx in stm32f7xxx
 10.12.2016	VcpDeInit bug.... arg. __com1 je bil klican z naslovom namesto z vsebino... ni blo za opazit, ker se ne klice 
-			v normalnem delovanju	
-			bug v CAN remote console, klic na _proc_add je imel v argumentu (io *)&__com namesto (io *)__com; ostanek od prejšnjega
-			nacina klicanja _proc_loop iz statatice strukture !!!
-			v App_Init ni vec posebej kodiranja za can in i2c inicializacijo na _DISC4/7. Konfiguracijo se nastavi 
-			iz konzole (-i in -can loop, zaradi unit testa)
+		v normalnem delovanju	
+		bug v CAN remote console, klic na _proc_add je imel v argumentu (io *)&__com namesto (io *)__com; ostanek od prejšnjega
+		nacina klicanja _proc_loop iz statatice strukture !!!
+		v App_Init ni vec posebej kodiranja za can in i2c inicializacijo na _DISC4/7. Konfiguracijo se nastavi 
+		iz konzole (-i in -can loop, zaradi unit testa)
 
